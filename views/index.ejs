@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHH - Công Cụ Reset Cursor</title>
+  <meta name="description" content="PHH là công cụ mạnh mẽ được thiết kế để bỏ qua các giới hạn của Cursor IDE. Reset Machine ID, chuyển đổi bản dùng thử thành Pro, bỏ qua giới hạn token và ngăn chặn cập nhật tự động.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="http://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+  <div id="disclaimer-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="ri-alert-line"></i> Tuyên Bố Miễn Trừ Quan Trọng</h2>
+        <span class="modal-close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning">
+          <i class="ri-error-warning-line"></i>
+          <strong>Cảnh báo:</strong> Sử dụng quá mức công cụ này có thể vi phạm điều khoản dịch vụ của Cursor.
+        </div>
+        <p>Bằng việc sử dụng công cụ này, bạn thừa nhận rằng:</p>
+        <ul>
+          <li>Tất cả các hành động thực hiện đều do bạn tự chịu rủi ro</li>
+          <li>Các nhà phát triển PHH không chịu trách nhiệm về bất kỳ hậu quả nào</li>
+          <li>Công cụ này không nên bị lạm dụng thường xuyên</li>
+          <li>Đây chỉ được cung cấp cho mục đích giáo dục và nghiên cứu</li>
+        </ul>
+        <p>Vui lòng sử dụng có trách nhiệm và cân nhắc hỗ trợ Cursor bằng cách mua giấy phép hợp pháp nếu bạn thấy sản phẩm của họ có giá trị.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="accept-disclaimer" class="btn">Tôi Hiểu và Chấp Nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <main>
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="ri-computer-line"></i>Thông Tin Hệ Thống</h2>
+        </div>
+        <div class="card-body">
+          <div id="system-info">
+            <div class="loading">Đang tải thông tin hệ thống</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="ri-apps-line"></i>Trạng Thái Cursor</h2>
+        </div>
+        <div class="card-body">
+          <div id="cursor-status">
+            <div class="loading">Đang tải thông tin cursor</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="ri-lock-unlock-line"></i>Reset Machine ID</h2>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-info">
+            <i class="ri-information-line"></i>
+            <strong>Quan trọng:</strong> Hãy đảm bảo Cursor đã được đóng trước khi reset machine ID.
+          </div>
+          <div class="action-grid">
+            <button id="reset-btn" class="btn"><i class="ri-refresh-line"></i>Reset Machine ID</button>
+            <button id="bypass-btn" class="btn btn-warning"><i class="ri-shield-flash-line"></i>Bỏ Qua Giới Hạn Token</button>
+            <button id="disable-update-btn" class="btn btn-info"><i class="ri-lock-line"></i>Tắt Cập Nhật Tự Động</button>
+            <button id="pro-convert-btn" class="btn btn-success"><i class="ri-vip-crown-line"></i>Chuyển Đổi Pro + Tùy Chỉnh UI</button>
+          </div>
+          <div id="reset-result"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 
